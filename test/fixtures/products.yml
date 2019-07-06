@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_name: MyString
+  colour: MyString
+  size: MyString
+  mobile_img_id: MyString
+  battery: MyString
+  speed: 
+  camera_out: MyString
+  camera_in: MyString
+  waterproof: MyString
+  onesegment: MyString
+  felica: MyString
+  authentication: MyString
+  display: MyString
+  ram: MyString
+  rom: MyString
+
+two:
+  product_name: MyString
+  colour: MyString
+  size: MyString
+  mobile_img_id: MyString
+  battery: MyString
+  speed: 
+  camera_out: MyString
+  camera_in: MyString
+  waterproof: MyString
+  onesegment: MyString
+  felica: MyString
+  authentication: MyString
+  display: MyString
+  ram: MyString
+  rom: MyString

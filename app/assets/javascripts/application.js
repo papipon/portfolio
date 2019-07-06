@@ -13,4 +13,14 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
 //= require_tree .
+$(function() {
+  var img = $('img');
+  function rotate() {
+    img.animate({rotate: '360'}, 20000, 'linear', function() {
+      rotate();
+    });
+  }
+  rotate();
+});
