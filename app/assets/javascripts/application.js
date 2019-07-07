@@ -18,7 +18,7 @@
 $(function() {
   var img = $('img');
   function rotate() {
-    img.animate({rotate: '360'}, 20000, 'linear', function() {
+    img.animate({rotate: '360'}, 80000, 'linear', function() {
       rotate();
     });
   }
