@@ -16,7 +16,7 @@
 //= require jquery
 //= require_tree .
 $(function() {
-  var img = $('img');
+  var img = $('#mobile1');
   function rotate() {
     img.animate({rotate: '360'}, 80000, 'linear', function() {
       rotate();

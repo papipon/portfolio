@@ -1,0 +1,2 @@
+module AdminImgHelper
+end
