@@ -1,14 +1,55 @@
- <div class="mobile_img" id="mobile1">
-   <figure><img src="/images/342453.jpg" width="900" float:right;></figure>
+<div class = "contener">
+ <div class = "col-xs-6">
+	 <div class="mobile_img" id="mobile1">
+	   <figure><img src="/images/342453.jpg" width="900" float:right;></figure>
+	 </div>
  </div>
 
- <div class="top_box">
-  <h1><%= link_to image_tag("/assets/08072019103056A.png",size: '250'), root_path, method: :get %>
-  </h1>
-   <ul>
-   	<li>about</li>
-   	<li>product</li>
-   	<li>selection</li>
-   </ul>
- </div>
+ <div class = "col-xs-4">
+	 <div class="top_box">
+	  <h1><%= link_to image_tag("/assets/08072019103056A.png",size: '250'), root_path, method: :get %>
+	  </h1>
+	   <ul>
+	   	<li><%= link_to image_tag("/assets/09072019063450A.png",size: '100'), tops_about_path, method: :get %></li>
+	   	<li><%= link_to image_tag("/assets/09072019064054A.png",size: '105'), root_path, method: :get %></li>
+	   	<li><%= link_to image_tag("/assets/09072019064908A.png",size: '100'), root_path, method: :get %></li>
+	   </ul>
+	 </div>
+</div>
+
+<div calss ="col-xs-2">
+	 <div id="photo">
+		<img src="/images/12342.jpg" width="400" height="400" alt="">
+		<img src="/images/12343.jpg" width="400" height="400" alt="">
+		<img src="/images/12344.jpg" width="400" height="400" alt="">
+		<img src="/images/12345.jpg" width="400" height="400" alt="">
+		<img src="/images/12346.jpg" width="400" height="400" alt="">
+		<img src="/images/123460.jpg" width="400" height="400" alt="">
+		<img src="/images/123456.jpg" width="400" height="400" alt="">
+		<img src="/images/123457.jpg" width="400" height="400" alt="">
+		<img src="/images/123458.jpg" width="400" height="400" alt="">
+		<img src="/images/123459.jpg" width="400" height="400" alt="">
+	 </div>
+</div>
+
+  <style type="text/css">
+    #photo {
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    text-align: left;
+    overflow: hidden;
+    position: absolute;
+    top:150px;
+    left:350px;}
+
+    #photo img {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+  </style>
+</div>
+
+
 
