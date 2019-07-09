@@ -1,0 +1,5 @@
+
+<%= @product.battery %>
+<% @product.imgs.each do |img| %>
+	<%= attachment_image_tag img, :image, :fill, 100, 100, format: 'jpeg' %>
+<% end -%>

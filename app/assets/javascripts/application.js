@@ -16,11 +16,29 @@
 //= require jquery
 //= require_tree .
 $(function() {
-  var img = $('img');
+  var img = $('#mobile1');
   function rotate() {
-    img.animate({rotate: '360'}, 20000, 'linear', function() {
+    img.animate({rotate: '360'}, 80000, 'linear', function() {
       rotate();
     });
   }
   rotate();
+});
+$(function(){
+    var setImg = '#photo';
+    var fadeSpeed = 1600;
+    var switchDelay = 3500;
+
+    $(setImg).children('img').css({opacity:'0'});
+    $(setImg + ' img:first-child').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
+
+    setInterval(function(){
+        $(setImg + ' :first-child')
+        .animate({opacity:'0'},fadeSpeed)
+        .next('img')
+        .animate({opacity:'1'},fadeSpeed)
+        .end()
+        .appendTo(setImg);
+    },switchDelay);
+
 });
