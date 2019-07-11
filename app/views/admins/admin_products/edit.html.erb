@@ -1,0 +1,35 @@
+<h1>商品編集</h1>
+<%= form_for @product, url: admins_admin_product_path(@product), html: { method: :put } do |f| %>
+
+<h5>機種名</h5>
+  <%= f.text_field :product_name %>
+  <h5>スマホの大きさ</h5>
+  <%= f.text_field :size %>
+  <h5>スマホのバッテリー容量</h5>
+  <%= f.text_field :battery %>
+  <h5>スマホの通信速度</h5>
+  <%= f.text_field :speed %>
+  <h5>アウトカメラ</h5>
+  <%= f.text_field :camera_out %>
+  <h5>インカメラ</h5>
+  <%= f.text_field :camera_in %>
+  <h5>防水機能</h5>
+  <%= f.text_field :waterproof %>
+  <h5>ワンセグ機能</h5>
+  <%= f.select :onesegment, [["○"],["X"]], {:prompt => "選択してください。"} %>
+  <h5>お財布ケータイ</h5>
+  <%= f.select :felica, [["○"],["X"]], {:prompt => "選択してください。"} %>
+  <h5>認証システム</h5>
+  <%= f.text_field :authentication %>
+  <h5>ディスプレイの大きさ</h5>
+  <%= f.text_field :display %>
+  <h5>処理速度</h5>
+  <%= f.text_field :ram %>
+  <h5>保存容量</h5>
+  <%= f.text_field :rom %>
+  <h5>メーカー</h5>
+  <%= f.select :maker, Maker.all.collect { |p| [p.name, p.name] } %>
+  <h3>
+  <%= f.submit '編集完了' %>
+  </h3>
+  <% end %>

@@ -5,21 +5,34 @@ class Admins::AdminProductsController < ApplicationController
   end
  
   def index
-  	
+  	@products = Product.page(params[:page])
   end
  
   def new
   	@product = Product.new
-    "成功"
   end
  
   def create
   	@product = Product.new(product_params)
     @product.save
-    redirect_to admin_products_path
+    redirect_to admins_admin_products_path
   end
  
   def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    redirect_to admins_admin_products_path
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    flash[:notice] = "Product was successfully destroyed."
+    redirect_to admins_admin_products_path
   end
 
   

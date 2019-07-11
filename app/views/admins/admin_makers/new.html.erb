@@ -1,0 +1,5 @@
+<h2>メーカー追加</h2>
+<%= form_for @maker ,url: admins_admin_makers_path  do |f| %>
+ <%= f.text_field :name %>
+ <%= f.submit "追加" %>
+<% end %>
