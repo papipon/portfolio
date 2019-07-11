@@ -1,4 +1,4 @@
-class AdminProductsController < ApplicationController
+class Admins::AdminProductsController < ApplicationController
 
   def show
   	@product = Product.find(params[:id])
@@ -10,6 +10,7 @@ class AdminProductsController < ApplicationController
  
   def new
   	@product = Product.new
+    "成功"
   end
  
   def create

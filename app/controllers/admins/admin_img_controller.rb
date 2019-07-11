@@ -1,4 +1,4 @@
-class AdminImgController < ApplicationController
+class Admins::AdminImgController < ApplicationController
   def new
   	@img = Img.new
   end
