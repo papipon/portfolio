@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'selections/index'
   root to: "tops#index"
 
   
