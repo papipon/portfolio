@@ -1,4 +1,4 @@
-class AdminImgController < ApplicationController
+class Admins::AdminImgController < ApplicationController
   def new
   	@img = Img.new
   end
@@ -10,9 +10,8 @@ class AdminImgController < ApplicationController
   def create
   	@img = Img.new(product_img_params)
   	@img.product_id = params[:admin_product_id]
-  	binding.pry
   	@img.save
-  	redirect_to admin_product_path(@img.product_id)
+  	redirect_to admins_admin_product_path(@img.product_id)
   end
 
   def update
@@ -20,6 +19,6 @@ class AdminImgController < ApplicationController
 
   private
   def product_img_params 
-  	params.require(:img).permit(:image,:image_colour)
+  	params.require(:img).permit(:image,:image_colour,:admin_product_id)
   end
 end

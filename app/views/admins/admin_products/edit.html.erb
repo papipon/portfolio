@@ -1,6 +1,7 @@
-<h1>新規商品追加</h1>
- <%= form_for @product, url: admin_products_path do |f| %>
-  <h5>機種名</h5>
+<h1>商品編集</h1>
+<%= form_for @product, url: admins_admin_product_path(@product), html: { method: :put } do |f| %>
+
+<h5>機種名</h5>
   <%= f.text_field :product_name %>
   <h5>スマホの大きさ</h5>
   <%= f.text_field :size %>
@@ -29,6 +30,6 @@
   <h5>メーカー</h5>
   <%= f.select :maker, Maker.all.collect { |p| [p.name, p.name] } %>
   <h3>
-  <%= f.submit '登録' %>
+  <%= f.submit '編集完了' %>
   </h3>
   <% end %>

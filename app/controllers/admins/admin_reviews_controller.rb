@@ -1,4 +1,4 @@
-class AdminReviewsController < ApplicationController
+class Admins::AdminReviewsController < ApplicationController
 
  def edit
  	@review = Review.find(pamams[:id])

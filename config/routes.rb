@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
-  get 'admin_img/new'
-  get 'admin_img/create'
-  get 'admin_img/update'
+
+  get 'reviews/new'
+  get 'reviews/edit'
+  get 'products/index'
+  get 'products/show'
+  root to: "tops#index"
+
+  
   get 'tops/index'
   get 'tops/about'
-  devise_for :admin_users
-  root to: "tops#index"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :admin_products do
-  	resources :admin_img
-  end
+  namespace :admins do
+    devise_for :admin_users
+    resource  :admin_makers, only:[:new,:create]
+    resources :admin_products do
+    	resources :admin_img
+    end
+  end 
 end

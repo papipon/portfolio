@@ -1,4 +1,4 @@
-
+<%= link_to '商品画像の追加',  new_admins_admin_product_admin_img_path(:admin_product_id => @product.id) %>
 <%= @product.battery %>
 <% @product.imgs.each do |img| %>
 	<%= attachment_image_tag img, :image, :fill, 100, 100, format: 'jpeg' %>
