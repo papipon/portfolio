@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-
-  get 'reviews/new'
-  get 'reviews/edit'
-  get 'products/index'
-  get 'products/show'
   root to: "tops#index"
 
   
   get 'tops/index'
   get 'tops/about'
+
+  resources :products, only:[:index,:show]do
+   resources :reviews, only:[:new,:edit,:destroy,:create,:update]
+  end 
 
   namespace :admins do
     devise_for :admin_users
