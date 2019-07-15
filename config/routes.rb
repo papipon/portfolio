@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'reviews/new'
+  get 'reviews/edit'
+  get 'products/index'
+  get 'products/show'
   root to: "tops#index"
 
   
