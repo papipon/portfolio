@@ -233,6 +233,8 @@ GEM
       activerecord (>= 5.0)
       activesupport (>= 5.0)
       i18n
+    rating (0.8.0)
+      activerecord (>= 4.2, < 6)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -343,6 +345,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rails-i18n
   ransack
+  rating
   refile!
   refile-mini_magick
   sass-rails (~> 5.0)
