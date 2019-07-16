@@ -2,6 +2,7 @@
 		<%= f.search_field :product_name_or_colour_cont, class: 'form-control', id: "product-search" %>
 		<%= f.submit "商品検索", class: "btn btn-default" %>
 	<% end %>
+	
  <% @products.each do |product| %>
  <%=product.product_name %>
  <% end %>

@@ -2,32 +2,35 @@ class SelectionsController < ApplicationController
   def index
   end
 
-  def index1
+  def index01
   	
   end
 
-  def index2
+  def index02
   end
 
-  def index3
+  def index03
   end
 
-  def index4
+  def index04
   end
 
-  def index5
+  def index05
   end
 
-  def index6
+  def index06
   end
 
-  def index7
+  def index07
   end
 
+  def index08
+  end
 
+  def index09
+  end
 
-
-
-
+  def index10
+  end
 
 end
