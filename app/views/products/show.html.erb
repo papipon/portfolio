@@ -1,2 +1,73 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h3><%= @product.product_name %></h3>
+<div class =slider >
+	<div class="slider slider-for">
+		<% @product.imgs.each do |img| %>
+		<div>
+			<%= attachment_image_tag img, :image, :fill, 250, 250, format: 'jpg' %>
+		</div>
+		<% end %>
+	</div>
+	<div class="slider slider-nav">
+		<% @product.imgs.each do |img| %>
+		<div>
+			<%= attachment_image_tag img, :image, :fill, 50, 50, format: 'jpg' %>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+
+
+
+<%= link_to "レビューを投稿する", new_product_review_path(@product), class: "button btn btn-success" %>
+
+
+<p class = "review-list-title"> レビュー</p>
+	<table class="table">
+		<tr style="background-color:#DDDDDD;">
+			<th style="width:100px;"> 投稿者</th>
+			<th style="width:200px;"> タイトル</th>
+			<th style="width:200px;"> 評価</th>
+			<th style="width:600px;"> 本文</th>
+		</tr>
+
+		<% @reviews.each do |r| %>
+			<tr>
+				<td>
+					<%= r.name %>
+				</td>
+				<td>
+					<%= r.title %>
+				</td>
+				<td>
+					<%= r.rate %>
+				</td>
+				<td>
+					<%= r.body %>
+				</td>
+			</tr>
+		<% end %>
+		<%= paginate @reviews, class: "paginate" %>
+	</table>
+           
+
+<script type="text/javascript">
+$(function(){
+$('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true
+});
+
+})
+</script>

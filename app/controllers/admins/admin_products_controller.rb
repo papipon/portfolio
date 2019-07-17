@@ -40,7 +40,7 @@ class Admins::AdminProductsController < ApplicationController
   private
 
   def product_params 
-  	params.require(:product).permit(:product_name,:size,:battery,:speed,:camera_out,:camera_in,:waterproof,:onesegment,:felica,:authentication,:display,:ram,:rom,:maker)
+  	params.require(:product).permit(:product_name,:size,:battery,:speed,:camera_out,:camera_in,:waterproof,:onesegment,:felica,:authentication,:display,:ram,:rom,:maker,:colour)
   end
 
 end
