@@ -6,7 +6,9 @@ class ReviewsController < ApplicationController
 
   def create
   	@product =Product.find(params[:product_id])
-  	@review = Review.new
+  	@review = Review.new(review_params)
+    @review.product_id = @product.id
+    @review.save
   	redirect_to product_path(@product)
   end
   	
@@ -25,11 +27,12 @@ class ReviewsController < ApplicationController
   def destroy
     review = Review.find(params[:id])
   	review.destroy
-    redirect_to product_path(params[:product_id])  	
+    product = Product.find(params[:product_id])
+    redirect_to product_path(product)  	
   end  
 
  private
  def review_params
- 	arams.require(:review).permit(:product_id, :name, :title,:star, :body)
+ 	params.require(:review).permit(:product_id, :name, :title,:star, :body)
  end
 end

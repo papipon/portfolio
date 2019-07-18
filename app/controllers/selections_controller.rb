@@ -3,7 +3,13 @@ class SelectionsController < ApplicationController
   def home
   end
 
+  def option
+  end
+
   def iphone
+  end
+
+  def color
   end
 
   def choice
