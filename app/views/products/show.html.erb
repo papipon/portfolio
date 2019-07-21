@@ -67,12 +67,11 @@
 				<td>
 					<%= r.body %>
 				</td>
-				<td>
-					<%#= link_to "レビューを編集する", edit_product_review_path(@product, @review), class: "review-button btn btn-success" %>
-				</td>
+				<!-- <td>
+					<%#= link_to "レビューを編集する", edit_product_review_path(@product, @review), class: "review-button btn btn-success" %> 
 				<td>
 			        <%#= link_to "レビューを削除する", product_review_path(product, @reviews), method: :delete, data:{confirm:"本当に削除しますか?"}, class: "review-button btn btn-warning" %>
-			    </td>
+			    </td> -->
 			</tr>
 		<% end %>
 		<%= paginate @reviews, class: "paginate" %>
