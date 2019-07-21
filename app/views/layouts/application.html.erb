@@ -15,10 +15,12 @@
   </head>
 
   <body>
+    
 
-<% if content_for?(:head) %>
-  <%= yield(:head) %>
-<% end %>
+
+    <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
 
     <%= yield %>
   </body>

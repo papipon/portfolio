@@ -1,12 +1,12 @@
 <div class = "container">
  <div class = "mobil_box">
  	<div class="row">
- 		
+ 		<div class="top_box">
+	        <h1><%= link_to image_tag("/assets/08072019103056A.png",size: '250'), root_path, method: :get %>
+	        </h1>
+        </div>
 
-		<div class="col-lg-4">
-			 <div class="top_box">
-			  <h1><%= link_to image_tag("/assets/08072019103056A.png",size: '250'), root_path, method: :get %>
-			  </h1>
+		<div class="col-lg-2">
 			   <ul>
 			   	<li><%= link_to image_tag("/assets/09072019063450A.png",size: '100'), tops_about_path, method: :get %></li>
 			   	<li><%= link_to image_tag("/assets/09072019064054A.png",size: '105'),  products_path, method: :get %></li>
@@ -15,12 +15,12 @@
 			 </div>
 		</div>
 
-		<div class="mobile_img col-lg-4" id="mobile1">
+		<div class="mobile_img " id="mobile1">
 		   <figure><img src="/images/342453.jpg" width="900" float:right;></figure>
 		</div>
 
 
-		<div calss ="col-lg-2">
+		<div calss ="col-lg-4">
 			 <div id="photo">
 				<img src="/images/12342.jpg" width="400" height="400" alt="">
 				<img src="/images/12343.jpg" width="400" height="400" alt="">
@@ -48,7 +48,7 @@
     overflow: hidden;
     position: absolute;
     top:150px;
-    left:350px;}
+    left:450px;}
 
     #photo img {
     top: 0;

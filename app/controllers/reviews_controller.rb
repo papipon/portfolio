@@ -29,7 +29,9 @@ class ReviewsController < ApplicationController
   	review.destroy
     product = Product.find(params[:product_id])
     redirect_to product_path(product)  	
-  end  
+  end
+
+
 
  private
  def review_params

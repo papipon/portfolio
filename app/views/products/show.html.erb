@@ -1,3 +1,7 @@
+<%= render 'layouts/header' %>
+　<div class = "header-message">
+	<p class = "theme-message">ご購入はオンラインサイト<a href = "https://onlineshop.smt.docomo.ne.jp/index.html" target = "_black">docomo online shop</a>へ</p>
+　</div>
 <meta http-equiv="refresh" content="; URL=">
 
 <h3><%= @product.product_name %></h3>
@@ -8,22 +12,25 @@
 		</div>
 		<% end %>
 	</div>
-	<div class="slider slider-nav">
+	<div class = "clearfix">
+	<div class="slider slider-nav clearfix">
 		<% @product.imgs.each do |img| %>
 		<div>
 			<%= attachment_image_tag img, :image, :fill, 50, 50, format: 'jpg' %>
 		</div>
 		<% end %>
 	</div>
+</div>
 
 
 
-<p>
- <%= link_to "レビューを投稿する", new_product_review_path(@product), class: "button btn btn-success" %>
-</p>
+
+ <div class = "review_button">
+  <%= link_to "レビューを投稿する", new_product_review_path(@product), class: "button btn btn-success" %>
+ </div>
 
 
-<p class = "review-list-title"> レビュー</p>
+<h3>レビュー</h3>
 	<table class="table">
 		<tr style="background-color:#DDDDDD;">
 			<th style="width:100px;"> 投稿者</th>
@@ -44,7 +51,18 @@
 					<%= r.title %>
 				</td>
 				<td>
-					<%= r.star %>
+					<div id="star<%= r.id %>"></div>
+	                <script>
+				        $('#star<%= r.id %>').raty({
+				            size: 36,
+				            starOff:  '<%= asset_path('star-off.png') %>',
+				            starOn : '<%= asset_path('star-on.png') %>',
+				            starHalf: '<%= asset_path('star-half.png') %>',
+				            half: true,
+				            readOnly: true,
+				            score: '<%= r.star %>',
+				        });
+			          </script>
 				</td>
 				<td>
 					<%= r.body %>
@@ -72,21 +90,22 @@ $(document).ready(function() {
 
 
 $(function(){
+
 $('.slider-for').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
   fade: true,
-  asNavFor: '.slider-nav'
 });
 $('.slider-nav').slick({
-  slidesToShow: 3,
+  slidesToShow: 5,
   slidesToScroll: 1,
+  arrows: false,
   asNavFor: '.slider-for',
-  dots: true,
-  centerMode: true,
   focusOnSelect: true
 });
 
 })
+
+
 </script>
