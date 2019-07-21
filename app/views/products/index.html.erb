@@ -27,7 +27,7 @@
 	            score: '<%= product.reviews.average(:star) %>',
 	        });
 	      </script>
-          <%= product.reviews.average(:star) %>点（<%= product.reviews.count %>）
+          <%= product.reviews.average(:star).to_f.round(1) %>点（<%= product.reviews.count %>）
 	   </div>
 	 <% end %>
 	</div>

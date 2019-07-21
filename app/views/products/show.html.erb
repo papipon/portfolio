@@ -15,7 +15,7 @@
 	<div class = "clearfix">
 	<div class="slider slider-nav clearfix">
 		<% @product.imgs.each do |img| %>
-		<div>
+		<div class="product-image">
 			<%= attachment_image_tag img, :image, :fill, 50, 50, format: 'jpg' %>
 		</div>
 		<% end %>
@@ -90,6 +90,7 @@ $(document).ready(function() {
 
 
 $(function(){
+var productCount = $(".product-image").length;
 
 $('.slider-for').slick({
   slidesToShow: 1,
@@ -98,7 +99,7 @@ $('.slider-for').slick({
   fade: true,
 });
 $('.slider-nav').slick({
-  slidesToShow: 5,
+  slidesToShow: productCount,
   slidesToScroll: 1,
   arrows: false,
   asNavFor: '.slider-for',
