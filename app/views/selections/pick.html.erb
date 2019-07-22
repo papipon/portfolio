@@ -1,29 +1,38 @@
 <%= render 'layouts/header' %>
-<h3>最も重視する項目</h3>
-
-
-
-音質の良いスマホ
-<%= link_to selections_music_path do %>
-<%= image_tag "Android.jpg", :size =>"400x400" %>
-<% end %>
-
-カメラ機能の良いスマホ
-<%= link_to selections_camera_path do %>
-<%= image_tag "Android.jpg", :size =>"400x400" %>
-<% end %>
-
-高速通信で快適に操作できるスマホ
-<%= link_to selections_comfort_path do %>
-<%= image_tag "Android.jpg", :size =>"400x400" %>
-<% end %>
-
-落としても壊れにくい頑丈なスマホ
-<%= link_to selections_robust_path do %>
-<%= image_tag "Android.jpg", :size =>"400x400" %>
-<% end %>
-
-バッテリーの持ちが良いスマホ
-<%= link_to selections_charge_path do %>
-<%= image_tag "Android.jpg", :size =>"400x400" %>
-<% end %>
+<div class = "container">
+ <div class = "row">
+  <h2>最も重視する項目</h2>
+　  <div class = "pick_box1"style="text-align: center;">
+		<h4>音質の良いスマホ</h4>
+		<%= link_to selections_music_path do %>
+		<%= image_tag "iPhonemusic_TP_V.jpg", :size =>"150x150" %>
+		<% end %>
+	</div>
+	<div class = "pick_box2"style="text-align: center;">
+		<h4>カメラ機能の良いスマホ</h4>
+		<%= link_to selections_camera_path do %>
+		<%= image_tag "TSURU1891A044_TP_V.jpg", :size =>"150x150" %>
+		<% end %>
+	</div>
+	<div class = "pick_box3"style="text-align: center;" >
+		<h4>高速通信で快適に操作できるスマホ</h4>
+		<%= link_to selections_comfort_path do %>
+		<%= image_tag "KAZ19112C082_TP_V.jpg", :size =>"150x150" %>
+		<% end %>
+	</div>
+ </div>
+ <div class = "row">
+	<div class = "pick_box4"style="text-align: center;">
+		<h4>落としても壊れにくい頑丈なスマホ</h4>
+		<%= link_to selections_robust_path do %>
+		<%= image_tag "PAK75_waretaekisyougamen20130720_TP_V.jpg", :size =>"150x150" %>
+		<% end %>
+	</div>
+	<div class = "pick_box5"style="text-align: center;">
+		<h4>バッテリーの持ちが良いスマホ</h4>
+		<%= link_to selections_charge_path do %>
+		<%= image_tag "iphoneFTHG5550_TP_V.jpg", :size =>"150x150" %>
+		<% end %>
+	</div>
+ </div>
+</div>

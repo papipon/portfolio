@@ -1,7 +1,7 @@
 class Admins::AdminReviewsController < ApplicationController
 
  def edit
- 	@review = Review.find(pamams[:id])
+ 	@review = Review.find(params[:id])
  end
 
  def update
@@ -13,7 +13,7 @@ class Admins::AdminReviewsController < ApplicationController
  def destroy
  	review = Review.find(params[:id])
     review.destroy
-    redirect_to tops_index
+    redirect_to admins_admin_products_path
  end
 
  private

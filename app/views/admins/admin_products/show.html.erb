@@ -1,5 +1,56 @@
-<%= link_to '商品画像の追加',  new_admins_admin_product_admin_img_path(:admin_product_id => @product.id) %>
-<%= @product.battery %>
-<% @product.imgs.each do |img| %>
-	<%= attachment_image_tag img, :image, :fill, 100, 100, format: 'jpeg' %>
-<% end -%>
+<div class = "container">
+   <div>
+	<%= link_to '商品画像の追加',  new_admins_admin_product_admin_img_path(:admin_product_id => @product.id) %>
+   </div>
+   <div>
+	<%= @product.product_name %>
+   </div>
+	<div>
+		<% @product.imgs.each do |img| %>
+			<%= attachment_image_tag img, :image, :fill, 100, 100, format: 'jpeg' %>
+		<% end -%>
+    </div>
+
+	<div class = "row">
+	      <h2> レビュー</h2>
+
+	      <table class="table table-hover">
+	      	<thead>
+	  	  	<tr style="background-color:#DDDDDD;">
+			<th style="width:100px;"> 投稿者</th>
+			<th style="width:200px;"> タイトル</th>
+			<th style="width:200px;"> 評価</th>
+			<th style="width:600px;"> 本文</th>
+			<th style="width:50px;"> </th>
+
+		</tr></thead>
+
+			<% @reviews.each do |r| %>
+	　　　　　<tbody>
+			 <tr>
+		      <td><%= r.name %></td>
+			  <td><%= r.title %></td>
+			  <td>
+				<div id="star<%= r.id %>"></div>
+	            <script>
+			        $('#star<%= r.id %>').raty({
+			            size: 36,
+			            starOff:  '<%= asset_path('star-off.png') %>',
+			            starOn : '<%= asset_path('star-on.png') %>',
+			            starHalf: '<%= asset_path('star-half.png') %>',
+			            half: true,
+			            readOnly: true,
+			            score: '<%= r.star %>',
+			        });
+		         </script>
+			  </td>
+			  <td><%= r.body %></td>
+	          <td class = "contents" style="padding: 8px 0 !important;"><%= link_to '削除',  admins_admin_product_admin_review_path(r.product.id, r.id), method: :delete, data:{confirm:"Are you sure?"}, class: "btn-sm btn-danger",style: 'width:50px;' %></td>
+			 </tr>
+			<% end %>
+			
+		   </tbody>
+		  </table>
+		  <%= paginate @reviews, class: "paginate" %>
+	</div>
+</div>

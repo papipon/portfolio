@@ -2,6 +2,8 @@ class Admins::AdminProductsController < ApplicationController
 
   def show
   	@product = Product.find(params[:id])
+    @reviews = @product.reviews.page(params[:page]).per(5)
+    # @review = @product.review
   end
  
   def index
