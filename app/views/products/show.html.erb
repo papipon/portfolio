@@ -2,9 +2,9 @@
 　<div class = "header-message">
 	<p class = "theme-message">ご購入はオンラインサイト<a href = "https://onlineshop.smt.docomo.ne.jp/index.html" target = "_black">docomo online shop</a>へ</p>
 　</div>
-<meta http-equiv="refresh" content="; URL=">
-
-<h3><%= @product.product_name %></h3>
+  <!-- <meta http-equiv="refresh" content="; URL="> -->
+<div class = "container">
+  <h3><%= @product.product_name %></h3>
 	<div class="slider-for">
 		<% @product.imgs.each do |img| %>
 		<div>
@@ -22,36 +22,74 @@
 	</div>
     </div>
     <div class ="product-spec">
-    <h4>スマホの大きさ(高さ×幅×厚さ)</h4>
-    	<h4><%= @product.size %></h4>
-    <h4>バッテリーの容量</h4>
-        <h3><%= @product.battery %></h3>
-    <h4>LTE通信速度(下り/上り)
-        <h3><%= @product.speed %></h3>
-    <h4>アウトカメラ</h4>
-    	<h3><%= @product.camera_out %></h3>
-    <h4>インカメラ</h4>
-    	<h3><%= @product.camera_in %></h3>
-    <h4>防水</h4>
-    	<h3><%= @product.waterproof %></h3>
-    <h4>ワンセグ機能</h4>
-    	<h3><%= @product.onesegment %></h3>
-    <h4>お財布ケータイ NFC(FeliCa)
-    	<h3><%= @product.felica %></h3>
-    <h4>認証システム</h4>
-    	<h3><%= @product.authentication  %></h3>
-    <h4>ディスプレイサイズ</h4>
-    	<h3><%= @product.display  %></h3>
-    <h4>RAM</h4>
-    	<h3><%= @product.ram  %></h3>
-    <h4>ROM</h4>
-    	<h3><%= @product.rom  %></h3>
-    <h4>メーカー </h4>
-    	<h3><%= @product.maker  %></h3>
+     <h2>スペック</h2>
+     <table class="table table-bordered" style="width: 600px;">
+     	<thead>
+         <tr> 
+            <th width="30%">ディスプレイサイズ</th>
+            <th width="30%">アウトカメラ</th>
+            <th width="30%">インカメラ</th>
+            </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+         	 <td><%= @product.display  %></td>
+         	 <td><%= @product.camera_out %></td>
+         	 <td><%= @product.camera_in %></td>
+         </tr>
+        </tbody>
+        <thead>
+         <tr>
+         	<th>バッテリーの容量</th>
+         	<th>RAM</th>
+            <th>ROM</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+            <td><%= @product.battery %></td>
+            <td><%= @product.ram  %></td>
+            <td><%= @product.rom  %></td>
+         </tr>
+        </tbody>
+        <thead>
+        <tr>
+        	<th>LTE通信速度<br>(下り/上)
+            <th>ワンセグ機能</th>
+            <th>お財布ケータイ NFC</th>
+            
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+         	<td><%= @product.speed %></td>
+            <td><%= @product.onesegment %></td>
+            <td><%= @product.felica %></td>
+         </tr>
+        </tbody>
+        <thead>
+        <tr>
+        	<th>認証システム</th>
+            <th>防水・防塵</th>
+            <th>スマホの大きさ<br>(高さ×幅×厚さ)</th> 
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+         	<td><%= @product.authentication  %></td>
+         	<td><%= @product.waterproof %></td>
+         	<td><%= @product.size %></td>
+         </tr>
+        </tbody>
+        <thead>
+        <tr>
+            <th>メーカー</th>
+            <td colspan="2" align="center"><%= @product.maker  %></td>
+        </tr>
+        </thead>
+     </table>
     </div>
-
-
-
 
  <div class = "review_button">
   <%= link_to "レビューを投稿する", new_product_review_path(@product), class: "button btn btn-success" %>
@@ -90,7 +128,7 @@
 				            readOnly: true,
 				            score: '<%= r.star %>',
 				        });
-			          </script>
+			         </script>
 				</td>
 				<td>
 					<%= r.body %>
@@ -104,7 +142,7 @@
 		<% end %>
 		<%= paginate @reviews, class: "paginate" %>
 	</table>
-
+</div>
 <input type="hidden" id="refresh" value="no">
 <script>
 $(document).ready(function() {

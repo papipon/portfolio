@@ -1,12 +1,19 @@
 <%= render 'layouts/header' %>
-<h3>希望製造メーカー</h3>
-
-国産メーカー希望
-<%= link_to selections_contry_path do %>
-<%= image_tag "Japan-6.png", :size =>"400x400" %>
-<% end %>
-
-メーカーに希望なし
-<%= link_to selections_pick_path do %>
-<%= image_tag "continents-28616_960_720.png",:size =>"400x400" %>
-<% end %>
+<div class = "container">
+ <div class = "row">
+  
+  <h1>希望製造メーカー</h1>
+    <div class = "col-xs-5">
+		<h4>国産メーカー希望</h4>
+		<%= link_to selections_contry_path do %>
+		<%= image_tag "Japan-6.png", :size =>"300x300" %>
+		<% end %>
+    </div>
+    <div class = "col-xs-2">
+		<h4>メーカーに希望なし</h4>
+		<%= link_to selections_pick_path do %>
+		<%= image_tag "continents-28616_960_720.png",:size =>"300x300" %>
+	    <% end %>
+    </div>
+ </div>
+</div>
