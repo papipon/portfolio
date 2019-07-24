@@ -25,9 +25,9 @@
   <script>
   $('#star').raty({
     size     : 36,
-    starOff:  '<%= asset_path('star-off.png') %>',
-    starOn : '<%= asset_path('star-on.png') %>',
-    starHalf: '<%= asset_path('star-half.png') %>',
+    starOff:  '<%= public_path('star-off.png') %>',
+    starOn : '<%= public_path('star-on.png') %>',
+    starHalf: '<%= public_path('star-half.png') %>',
     scoreName: 'review[star]',
     half: true,
   });
