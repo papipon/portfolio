@@ -1,8 +1,59 @@
-	<%= search_form_for @q do |f| %>
-		<%= f.search_field :product_name_or_colour_cont, class: 'form-control', id: "product-search" %>
+　<div class = "container">
+   <%= render 'layouts/header' %>
+    <div class = "header-message">
+      <p class = "theme-message">ご購入はオンラインサイト<a href = "https://onlineshop.smt.docomo.ne.jp/index.html" target = "_black">docomo online shop</a>へ</p>
+    </div>
+	 <%= search_form_for @q do |f| %>
+		<%= f.search_field :product_name_or_colour_or_kana_name_cont, class: 'form-control', id: "product-search" %>
 		<%= f.submit "商品検索", class: "btn btn-default" %>
 	<% end %>
+	<div class ="product-box">
+	 <% @products.each do |product| %>
+	  <div class = "product-item">
+	   <%= link_to product_path(product) do %>
+	    <%= attachment_image_tag product.imgs.first, :image, :fill, 250, 250, format: 'jpg' %>
+	   <% end %>
+	   <%=product.product_name %>
+	   <% star = product.reviews.average(:star).to_i %>
+	     <div id="star<%= product.id %>"></div>
+	      <script>
+	        $('#star<%= product.id %>').raty({
+	            size: 36,
+	            starOff:  '<%= asset_path('star-off.png') %>',
+	            starOn : '<%= asset_path('star-on.png') %>',
+	            starHalf: '<%= asset_path('star-half.png') %>',
+	            half: true,
+	            readOnly: true,
+	            score: '<%= product.reviews.average(:star) %>',
+	        });
+	      </script>
+          <%= product.reviews.average(:star).to_f.round(1) %>点（<%= product.reviews.count %>）
+	   </div>
+	 <% end %>
+	</div>
+    <div class = "sidebar">
+    <div class = "ranking-box">
+      <p class = "ranking-title">
+        <i class = "fas fa-crown" style = "color: #E8BB53;"></i>
+        人気ランキング
+        <i class = "fas fa-crown" style = "color: #E8BB53;"></i>
+      </p>
+      <% @all_ranks.each.with_index(1) do |product , i| %>
+        <div class = rank-img>
+          <div class = "tape"></div>
+          <p><%= i %> 位　</p>
+          <%= attachment_image_tag product.imgs.first, :image, :fill, 80, 80, fallback: "no_img.jpg", size: "80x80" %>
+          <div class = "right">
+              <span class = "product-name-rank"><%= link_to product.product_name,product_path(product) %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>
+
+　</div>
+
+		
 	
- <% @products.each do |product| %>
- <%=product.product_name %>
- <% end %>
+
