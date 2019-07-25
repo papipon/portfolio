@@ -23,7 +23,11 @@ Rails.application.routes.draw do
   end 
 
   namespace :admins do
-    devise_for :admin_users
+    devise_for :admin_users, controllers: {
+        sessions: 'admin_users/sessions',
+        registrations: 'admin_users/registrations'
+      }
+
     resource  :admin_makers, only:[:new,:create]
     resources :admin_products do
       resources :admin_reviews,only:[:edit,:destroy,:update]

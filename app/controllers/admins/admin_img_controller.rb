@@ -1,5 +1,5 @@
 class Admins::AdminImgController < ApplicationController
-  before_action :authenticate_user!
+before_action :authenticate_admin_user!
   def new
   	@img = Img.new
   end

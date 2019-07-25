@@ -1,5 +1,5 @@
 class Admins::AdminProductsController < ApplicationController
-
+before_action :authenticate_admins_admin_user!
   def show
   	@product = Product.find(params[:id])
     @reviews = @product.reviews.page(params[:page]).per(5)
