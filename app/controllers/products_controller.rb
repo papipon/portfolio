@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
 									else
 										0
 									end
-									}.in_groups_of(4)[0]
+									}.in_groups_of(5)[0]
 	@rank = 1
 
 	@all_ranks.each do |a| 
