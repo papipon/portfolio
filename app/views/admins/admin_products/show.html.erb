@@ -1,6 +1,8 @@
 <div class = "container">
    <div>
-	<%= link_to '商品画像の追加',  new_admins_admin_product_admin_img_path(:admin_product_id => @product.id) %>
+	<%= link_to '商品画像の追加',  new_admins_admin_product_admin_img_path(:admin_product_id => @product.id), class: "btn-sm btn-info" %>
+	<%= link_to '商品一覧へ', admins_admin_products_path, class: "btn-sm btn-primary" %>
+
    </div>
    <div>
 	<%= @product.product_name %>
@@ -35,9 +37,9 @@
 	            <script>
 			        $('#star<%= r.id %>').raty({
 			            size: 36,
-			            starOff:  '<%= asset_path('star-off.png') %>',
-			            starOn : '<%= asset_path('star-on.png') %>',
-			            starHalf: '<%= asset_path('star-half.png') %>',
+			            starOff:  '/images/star-off.png',
+			            starOn : '/images/star-on.png',
+			            starHalf: '/images/star-half.png',
 			            half: true,
 			            readOnly: true,
 			            score: '<%= r.star %>',
