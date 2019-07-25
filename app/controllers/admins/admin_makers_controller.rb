@@ -1,4 +1,5 @@
 class Admins::AdminMakersController < ApplicationController
+  before_action :authenticate_user!
   def new
   	@maker = Maker.new
   end

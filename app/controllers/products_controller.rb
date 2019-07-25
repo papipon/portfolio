@@ -14,7 +14,14 @@ class ProductsController < ApplicationController
 									else
 										0
 									end
-									}.in_groups_of(5)[0]    
+									}.in_groups_of(4)[0]
+	@rank = 1
+
+	@all_ranks.each do |a| 
+		p "========="
+		p a
+		p "========="
+	end
   end
 
   def show
@@ -24,16 +31,3 @@ class ProductsController < ApplicationController
 
 
 end
-
-
-Product.all.sort { |current_product, next_product| 
-	if current_product.reviews.first && next_product.reviews.first
-		current_product.reviews.average(:star) <=> next_product.reviews.average(:star)
-	elsif !current_product.reviews.first
-		1
-	elsif !next_product.reviews.first
-		-1
-	else
-		0
-	end
-	}.in_groups_of(5)[0]

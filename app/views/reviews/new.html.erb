@@ -20,14 +20,15 @@
     <div class="col-md-4">
       <%= f.submit '投稿', class: 'btn btn-info btn-lg btn-block',style: 'width:150px;' %>
       <% end %>
+
     </div>
 </div>
   <script>
   $('#star').raty({
     size     : 36,
-    starOff:  '<%= public_path('star-off.png') %>',
-    starOn : '<%= public_path('star-on.png') %>',
-    starHalf: '<%= public_path('star-half.png') %>',
+    starOff:  '/images/star-off.png',
+    starOn : '/images/star-on.png' ,
+    starHalf: '/images/star-half.png' ,
     scoreName: 'review[star]',
     half: true,
   });

@@ -1,5 +1,5 @@
 class Admins::AdminReviewsController < ApplicationController
-
+before_action :authenticate_user!
  def edit
  	@review = Review.find(params[:id])
  end

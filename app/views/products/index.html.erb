@@ -19,9 +19,9 @@
 	      <script>
 	        $('#star<%= product.id %>').raty({
 	            size: 36,
-	            starOff:  '<%= asset_path('star-off.png') %>',
-	            starOn : '<%= asset_path('star-on.png') %>',
-	            starHalf: '<%= asset_path('star-half.png') %>',
+	            starOff:  '/images/star-off.png',
+	            starOn : '/images/star-on.png',
+	            starHalf: '/images/star-half.png',
 	            half: true,
 	            readOnly: true,
 	            score: '<%= product.reviews.average(:star) %>',
@@ -38,15 +38,18 @@
         人気ランキング
         <i class = "fas fa-crown" style = "color: #E8BB53;"></i>
       </p>
-      <% @all_ranks.each.with_index(1) do |product , i| %>
+
+
+      <% @all_ranks.each do |product| %>
         <div class = rank-img>
           <div class = "tape"></div>
-          <p><%= i %> 位　</p>
-          <%= attachment_image_tag product.imgs.first, :image, :fill, 80, 80, fallback: "no_img.jpg", size: "80x80" %>
+          <p><%= @rank %> 位　</p>
+          <%= attachment_image_tag product.imgs.first, :image, :fill, 80, 80, fallback: "/images/no_img.jpg", size: "80x80" %>
           <div class = "right">
               <span class = "product-name-rank"><%= link_to product.product_name,product_path(product) %></span>
           </div>
         </div>
+        <% @rank += 1 %>
       <% end %>
     </div>
   </div>
