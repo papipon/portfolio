@@ -42,7 +42,7 @@ before_action :authenticate_admins_admin_user!
   private
 
   def product_params 
-  	params.require(:product).permit(:product_name,:size,:battery,:speed,:camera_out,:camera_in,:waterproof,:onesegment,:felica,:authentication,:display,:ram,:rom,:maker,:colour)
+  	params.require(:product).permit(:product_name,:size,:battery,:speed,:camera_out,:camera_in,:waterproof,:onesegment,:felica,:authentication,:display,:ram,:rom,:maker,:colour,:kana_name)
   end
 
 end
