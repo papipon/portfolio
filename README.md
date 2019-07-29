@@ -8,6 +8,7 @@ Things you may want to cover:
 
 * Usage
 ![papipon mov](https://user-images.githubusercontent.com/50140667/62032494-c4183b80-b224-11e9-92fe-ff48f8c3fdbd.gif)
+
 See about page
 
 * Ruby version
@@ -21,16 +22,7 @@ Ruby on Rails 5.2.3
 Mysql
 
 * Services
-gem 'devise'
-gem 'kaminari', '~> 1.1.1'
-gem 'refile', require: 'refile/rails', github: 'manfe/refile'
-gem 'refile-mini_magick'
-gem 'ransack'
-gem 'bootstrap-sass', '~> 3.3.6'
-gem 'pry-rails'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-
+gem devise / gem 'kaminari', '~> 1.1.1' /gem refile, require: refile/rails/ gem refile-mini_magick / gem ransack / gem bootstrap-sass, ~> 3.3.6 / gem pry-rails / gem jquery-rails / gem jquery-ui-rails
 
 * Deployment instructions
 AWS
