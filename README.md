@@ -1,32 +1,39 @@
-# README
+# portfolio
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-2.4.5
-
-* System dependencies
-Ruby on Rails 
 
 * Usage
-See About Page
 ![papipon mov](https://user-images.githubusercontent.com/50140667/62032494-c4183b80-b224-11e9-92fe-ff48f8c3fdbd.gif)
+See about page
 
-* Configuration
+* Ruby version
+2.5.5
+
+* System dependencies
+Ruby on Rails 5.2.3
+
 
 * Database creation
+Mysql
 
-* Database initialization
+* Services
+gem 'devise'
+gem 'kaminari', '~> 1.1.1'
+gem 'refile', require: 'refile/rails', github: 'manfe/refile'
+gem 'refile-mini_magick'
+gem 'ransack'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'pry-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+AWS
+http://52.198.23.66/
 
 * ...
-
-![papipon mov](https://user-images.githubusercontent.com/50140667/62032494-c4183b80-b224-11e9-92fe-ff48f8c3fdbd.gif)
